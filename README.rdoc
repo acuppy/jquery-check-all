@@ -4,13 +4,18 @@ jQuery check all is a small plugin to check all checkboxes within a container vi
 
 == Usage
 
+=== Container
+The plugin expects to be bound to a container, such as a `div` or `p`.
+
+=== Master Checkbox
 Bind the master check-all checkbox with the default selector `input.check-all` or by setting the `checkboxAll` option below.
 
+=== Subordinate Checkboxes
 Bind the subordinate checkboxes by including them in the master checkbox container.  For an example, review the TestRunner.html within the test directory.
 
-Bind the submitToggle action to a jQuery selected button.
+=== Example implementation
 
-    $('div').checkAll({
+    $('div.checkbox-container').checkAll({
 
       // default master checkbox selector
       checkboxAll: 'input.check-all[type="checkbox"]',
