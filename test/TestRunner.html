@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Runner</title>
+
+    <!-- include spec files here... -->
+    <script type="text/javascript" src="support/jquery-1.9.1.min.js"></script>
+
+    <!-- include source files here... -->
+    <script type="text/javascript" src="../jquery.check_all.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <ul>
+        <li><input class="check-all" type="checkbox" name="check-all" value="" /><strong>All</strong></li>
+        <li></li>
+        <li><input type="checkbox" name="" value="" />Item 1</li>
+        <li><input type="checkbox" name="" value="" />Item 2</li>
+        <li><input type="checkbox" name="" value="" />Item 3</li>
+        <li><input type="checkbox" name="" value="" />Item 4</li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        $("div").checkAll({
+          onUpdateAll: function(){
+            alert('this');
+          }
+        });
+      })
+    </script>
+  </body>
+</html>
