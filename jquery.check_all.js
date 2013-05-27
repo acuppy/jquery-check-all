@@ -7,12 +7,12 @@
       options = $.extend({
         checkboxAll: 'input.check-all[type="checkbox"]',
         checkbox:    'input[type="checkbox"]',
-        onCheck:      null,
-        onCheckAll:   null,
-        onUnCheck:    null,
-        onUnCheckAll: null,
-        onUpdate:     null,
-        onUpdateAll:  null
+        onCheck:      $.noop,
+        onCheckAll:   $.noop,
+        onUnCheck:    $.noop,
+        onUnCheckAll: $.noop,
+        onUpdate:     $.noop,
+        onUpdateAll:  $.noop
       }, options)
 
       var $container = $(this)
@@ -43,21 +43,21 @@
         if($(this).prop('checked') === true){
           var method = scope == 'all' ? 'onCheckAll' : 'onCheck'
 
-          if(typeof options[method] == 'function'){
+          if( $.isFunction(options[method]) ){
             options[method].call(this)
           }
         } else {
           
           var method = scope == 'all' ? 'onUnCheckAll' : 'onUnCheck'
 
-          if(typeof options[method] == 'function'){
+          if( $.isFunction(options[method]) ){
             options[method].call(this)
           }
         }
 
         var method = scope == 'all' ? 'onUpdateAll' : 'onUpdate'
 
-        if(typeof options[method] == 'function'){
+        if( $.isFunction(options[method]) ){
           options[method].call(this)
         }
       }
