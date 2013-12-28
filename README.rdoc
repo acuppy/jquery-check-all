@@ -1,4 +1,5 @@
 == jQuery Check All
+{<img src="https://codeclimate.com/github/acuppy/jquery.check_all.js.png" />}[https://codeclimate.com/github/acuppy/jquery.check_all.js]
 
 jQuery check all is a small plugin to check all checkboxes within a container via a master check-all checkbox.  This would be commonly used with bulk actions.
 
